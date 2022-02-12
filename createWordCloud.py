@@ -7,8 +7,6 @@ import matplotlib.pyplot as plt
 
 reviewList = grabReviewJSON.getList()
 collapsedList = ' '.join(reviewList)
-STOPWORDS.add('game')
-STOPWORDS.add('cookie')
-STOPWORDS.add('clicker')
+STOPWORDS.update(['game','cookie','cookies','clicker','play','idle'])
 wordcloud = WordCloud().generate(text=collapsedList)
 wordcloud.to_file('first_100_neg.png')
